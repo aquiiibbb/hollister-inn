@@ -120,8 +120,14 @@ export default function BookingBar() {
           <div className="booking-value" id="checkout-display">{checkoutDate.toLocaleDateString("en-US", dateFormat)}</div>
         </div>
         <div className="booking-field" onClick={() => showGuestSelector()}>
-          <label className="booking-label">{"Rooms & guests"}</label>
-          <div className="booking-value" id="guest-display">{guestDisplay}</div>
+          <label className="booking-label">
+            <span className="booking-label-desktop">Rooms & guests</span>
+            <span className="booking-label-mobile">Rooms</span>
+          </label>
+          <div className="booking-value" id="guest-display">
+            <span className="booking-val-desktop">{guestDisplay}</span>
+            <span className="booking-val-mobile">{guests.rooms} {guests.rooms === 1 ? 'Room' : 'Rooms'}</span>
+          </div>
         </div>
         <button className="search-btn" onClick={() => bookNow()}>Book Now</button>
       </div>
