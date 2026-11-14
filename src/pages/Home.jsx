@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import usePageStyle from '../hooks/usePageStyle';
 import indexCss from '../styles/index.css?raw';
 import bootstrapCss from 'bootstrap/dist/css/bootstrap.min.css?raw';
-
 import Header from '../components/home/Header';
 import BookingBar from '../components/home/BookingBar';
 import PhotoGrid from '../components/home/PhotoGrid';

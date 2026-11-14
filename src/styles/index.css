@@ -574,7 +574,7 @@ body {
 }
 
 .hotel-title {
-  font-size: 32px;
+  font-size: 29px;
   font-weight: 650;
   color: #1a202c;
   margin: 0 0 7px 0;
@@ -585,7 +585,7 @@ body {
 
 .hotel-subtitle {
   display: block;
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 550;
   color: #4c576c;
   font-style: italic;
