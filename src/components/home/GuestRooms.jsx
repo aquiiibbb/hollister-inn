@@ -18,9 +18,27 @@ export default function GuestRooms({ openRoomModal, navigate }) {
       <div className="room-selection-filters">
         <button onClick={() => setFilter('all')} className={'filter-btn' + ((filter ?? 'all') === 'all' ? ' active' : '')}>All rooms</button>
         {" "}
-        <button onClick={() => setFilter('1bed')} className={'filter-btn' + ((filter ?? 'all') === '1bed' ? ' active' : '')}>🛏️ King / 1 Bed (2)</button>
+        <button onClick={() => setFilter('1bed')} className={'filter-btn' + ((filter ?? 'all') === '1bed' ? ' active' : '')}>
+          <svg width="16" height="16" viewBox="0 0 24 24" style={{ verticalAlign: 'middle', marginRight: 6 }}>
+            <rect x="2" y="5" width="2.5" height="15" rx="1" fill="#1e40af" />
+            <rect x="19.5" y="10" width="2.5" height="10" rx="1" fill="#1e40af" />
+            <path d="M4.5 12h15v6h-15z" fill="#3b82f6" />
+            <rect x="5.5" y="8" width="5" height="4" rx="1" fill="#f1f5f9" stroke="#cbd5e1" strokeWidth="0.5" />
+            <rect x="2" y="18" width="20" height="2" rx="1" fill="#1e3a8a" />
+          </svg>
+          King / 1 Bed (2)
+        </button>
         {" "}
-        <button onClick={() => setFilter('2bed')} className={'filter-btn' + ((filter ?? 'all') === '2bed' ? ' active' : '')}>🛏️ 2 Beds / Family (1)</button>
+        <button onClick={() => setFilter('2bed')} className={'filter-btn' + ((filter ?? 'all') === '2bed' ? ' active' : '')}>
+          <svg width="16" height="16" viewBox="0 0 24 24" style={{ verticalAlign: 'middle', marginRight: 6 }}>
+            <rect x="2" y="5" width="2.5" height="15" rx="1" fill="#1e40af" />
+            <rect x="19.5" y="10" width="2.5" height="10" rx="1" fill="#1e40af" />
+            <path d="M4.5 12h15v6h-15z" fill="#3b82f6" />
+            <rect x="5.5" y="8" width="5" height="4" rx="1" fill="#f1f5f9" stroke="#cbd5e1" strokeWidth="0.5" />
+            <rect x="2" y="18" width="20" height="2" rx="1" fill="#1e3a8a" />
+          </svg>
+          2 Beds / Family (1)
+        </button>
       </div>
       <div className="rooms-grid" id="rooms-grid">
         <div className="room-card" data-type="1bed" style={cardStyle("1bed")}>

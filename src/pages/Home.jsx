@@ -76,9 +76,9 @@ export default function Home() {
 
     const header = document.querySelector('.hotel-header');
     const stickyNav = document.querySelector('.sticky-nav');
-    const headerHeight = header ? header.getBoundingClientRect().height : 60;
-    const navHeight = stickyNav ? stickyNav.getBoundingClientRect().height : 46;
-    const totalOffset = headerHeight + navHeight + 16;
+    const headerHeight = header ? header.getBoundingClientRect().height : 44;
+    const navHeight = stickyNav ? stickyNav.getBoundingClientRect().height : 40;
+    const totalOffset = headerHeight + navHeight + 8;
 
     const elementPosition = el.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - totalOffset;
