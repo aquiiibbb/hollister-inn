@@ -5706,7 +5706,7 @@ body.disable-animations * {
 }
 
 .policy-grid {
-  margin-left: 10px;
+  margin-left: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
@@ -5717,7 +5717,8 @@ body.disable-animations * {
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 1.09rem;
-  width: 300px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .policy-card-title {
@@ -5767,13 +5768,17 @@ body.disable-animations * {
 /* === MOBILE: 600px se neeche - booking row fix === */
 @media (max-width: 600px) {
 
-  /* Header compact */
+  /* Header normal mobile height & padding */
   .hotel-header {
-    padding: 6px 0 !important;
+    height: 52px !important;
+    padding: 5px 0 !important;
+    background: #ffffff !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+    box-sizing: border-box !important;
   }
 
   .hotel-header-container {
-    padding: 0 10px !important;
+    padding: 0 12px !important;
   }
 
   /* Logo + Title + Button ek line mein */
@@ -5782,15 +5787,14 @@ body.disable-animations * {
     flex-direction: row !important;
     align-items: center !important;
     justify-content: space-between !important;
-    gap: 6px !important;
+    gap: 8px !important;
     flex-wrap: nowrap !important;
     padding: 0 !important;
-    height: 38px !important;
+    height: 42px !important;
   }
 
   .hotel-logo-section {
     flex-shrink: 0 !important;
-    min-width: 68px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
@@ -5798,7 +5802,7 @@ body.disable-animations * {
   }
 
   .hotel-logo img {
-    height: 30px !important;
+    height: 34px !important;
     margin-top: 0 !important;
     width: auto !important;
     border-radius: 4px !important;
@@ -5811,7 +5815,7 @@ body.disable-animations * {
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
-    padding: 0 2px !important;
+    padding: 0 4px !important;
     min-width: 0 !important;
   }
 
@@ -5830,9 +5834,9 @@ body.disable-animations * {
 
   .hotel-title-mobile {
     display: block !important;
-    font-size: 14px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.3px !important;
+    font-size: 15.5px !important;
+    font-weight: 750 !important;
+    letter-spacing: 0.4px !important;
     color: #111827 !important;
     white-space: nowrap !important;
     line-height: 1.15 !important;
@@ -5850,9 +5854,9 @@ body.disable-animations * {
   .hotel-subtitle-mobile {
     display: block !important;
     padding: 0 !important;
-    margin: 1px auto 0 !important;
-    font-size: 9.5px !important;
-    color: #64748b !important;
+    margin: 1.5px auto 0 !important;
+    font-size: 10px !important;
+    color: #4b5563 !important;
     white-space: nowrap !important;
     font-style: normal !important;
     line-height: 1.15 !important;
@@ -5862,12 +5866,11 @@ body.disable-animations * {
 
   .hotel-details-btn {
     flex-shrink: 0 !important;
-    min-width: 68px !important;
-    padding: 2px 6px !important;
-    font-size: 9.5px !important;
+    padding: 3px 8px !important;
+    font-size: 10.5px !important;
     font-weight: 600 !important;
-    height: 22px !important;
-    border-radius: 4px !important;
+    height: 26px !important;
+    border-radius: 5px !important;
     background: #661f31 !important;
     color: #ffffff !important;
     border: none !important;
@@ -6729,16 +6732,17 @@ body {
 
 /* Bottom Overrides for Mobile (Screen width <= 768px) */
 @media (max-width: 768px) {
-  /* Mobile Header - Attractive, single line title without lengthy "- Hollister California" */
+  /* Mobile Header - Attractive, balanced height and width */
   .hotel-header {
-    height: 44px !important;
-    padding: 3px 0 !important;
+    height: 52px !important;
+    padding: 5px 0 !important;
     background: #ffffff !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
     box-sizing: border-box !important;
   }
 
   .hotel-header-container {
-    padding: 0 8px !important;
+    padding: 0 12px !important;
   }
 
   .hotel-top-row {
@@ -6746,14 +6750,13 @@ body {
     flex-direction: row !important;
     align-items: center !important;
     justify-content: space-between !important;
-    gap: 6px !important;
+    gap: 8px !important;
     padding: 0 !important;
-    height: 38px !important;
+    height: 42px !important;
   }
 
   .hotel-logo-section {
     flex-shrink: 0 !important;
-    min-width: 68px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
@@ -6761,7 +6764,7 @@ body {
   }
 
   .hotel-logo img {
-    height: 30px !important;
+    height: 34px !important;
     width: auto !important;
     border-radius: 4px !important;
   }
@@ -6773,7 +6776,7 @@ body {
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
-    padding: 0 2px !important;
+    padding: 0 4px !important;
     min-width: 0 !important;
   }
 
@@ -6792,9 +6795,9 @@ body {
 
   .hotel-title-mobile {
     display: block !important;
-    font-size: 14px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.3px !important;
+    font-size: 15.5px !important;
+    font-weight: 750 !important;
+    letter-spacing: 0.4px !important;
     color: #111827 !important;
     white-space: nowrap !important;
     line-height: 1.15 !important;
@@ -6812,9 +6815,9 @@ body {
   .hotel-subtitle-mobile {
     display: block !important;
     padding: 0 !important;
-    margin: 1px auto 0 !important;
-    font-size: 9.5px !important;
-    color: #64748b !important;
+    margin: 1.5px auto 0 !important;
+    font-size: 10px !important;
+    color: #4b5563 !important;
     white-space: nowrap !important;
     font-style: normal !important;
     line-height: 1.15 !important;
@@ -6824,12 +6827,11 @@ body {
 
   .hotel-details-btn {
     flex-shrink: 0 !important;
-    min-width: 68px !important;
-    padding: 2px 6px !important;
-    font-size: 9.5px !important;
+    padding: 3px 8px !important;
+    font-size: 10.5px !important;
     font-weight: 600 !important;
-    height: 22px !important;
-    border-radius: 4px !important;
+    height: 26px !important;
+    border-radius: 5px !important;
     background: #661f31 !important;
     color: #ffffff !important;
     border: none !important;
@@ -6849,9 +6851,9 @@ body {
     display: inline !important;
   }
 
-  /* Body padding only 50px */
+  /* Body padding 58px for 52px header */
   body {
-    padding-top: 50px !important;
+    padding-top: 58px !important;
   }
 
   /* Booking bar normal balanced spacing */
@@ -6859,10 +6861,10 @@ body {
     margin: 6px auto 0 !important;
   }
 
-  /* Sticky Nav sticks right under the header at 44px */
+  /* Sticky Nav sticks right under the header at 52px */
   .sticky-nav {
     position: sticky !important;
-    top: 44px !important;
+    top: 52px !important;
     margin: 8px 0 0 !important;
     z-index: 99 !important;
   }
@@ -6876,7 +6878,7 @@ body {
   #reviews,
   #contact,
   #terms {
-    scroll-margin-top: 96px !important;
+    scroll-margin-top: 104px !important;
   }
 
   .nearby-left, .nearby-right { padding: 20px 16px !important; }
@@ -6884,7 +6886,37 @@ body {
   .review-card { padding: 20px 16px !important; min-height: auto !important; }
   .contact-item { padding: 18px 16px !important; }
   .contact-form { padding: 20px 16px !important; }
-  .terms-section { padding: 22px 14px !important; margin-top: 28px !important; }
+  
+  /* Terms Section full width on mobile, no left shift */
+  .terms-section {
+    padding: 24px 12px !important;
+    margin-top: 28px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .terms-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .policy-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    gap: 14px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .policy-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+  }
   .hotel-preview-wrapper { width: 100% !important; padding: 10px 10px 24px !important; }
   .hotel-footer { margin-top: 32px !important; }
 
