@@ -545,3 +545,59 @@ body { padding-top: 30px; }
 .rooms-grid { gap: 30px; margin-bottom: 60px; }
 .page-header { margin-bottom: 50px; }
 .filter-btn.active, .filter-btn:hover { border-color: #661f31; }
+
+/* Mobile Responsive Overrides */
+@media (max-width: 768px) {
+  body {
+    padding-top: 15px;
+  }
+  .container {
+    padding: 0 12px;
+  }
+  .page-header {
+    margin-bottom: 24px;
+  }
+  .page-title {
+    font-size: 22px;
+  }
+  .page-subtitle {
+    font-size: 13.5px;
+  }
+  .room-selection-filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+    gap: 8px;
+    margin-bottom: 20px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .filter-btn {
+    flex: 0 0 auto;
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+  .rooms-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .rooms-grid .room-image {
+    height: 190px;
+  }
+  .rooms-grid .room-details {
+    padding: 16px;
+  }
+  .rooms-grid .room-pricing {
+    padding: 14px 16px;
+  }
+  .room-modal {
+    width: 95%;
+    margin: 15px auto;
+  }
+  .modal-amenities-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}

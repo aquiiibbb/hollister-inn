@@ -359,7 +359,7 @@
             }
 
             .hampton-modal-right {
-                padding: 12px;
+                padding: 14px;
             }
 
             .hampton-image-container {
@@ -367,7 +367,7 @@
             }
 
             .hampton-hotel-info {
-                padding: 12px;
+                padding: 14px;
             }
 
             .hampton-amenities-grid {
@@ -380,13 +380,23 @@
             }
 
             .hampton-tabs {
-                flex-direction: column;
-                gap: 0;
+                display: flex;
+                flex-direction: row;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                gap: 4px;
+                border-bottom: 1px solid #e5e7eb;
+                padding-bottom: 2px;
             }
 
             .hampton-tab-btn {
-                text-align: left;
-                border-bottom: 1px solid #e5e7eb;
+                white-space: nowrap;
+                flex: 0 0 auto;
+                text-align: center;
+                padding: 8px 14px;
+                font-size: 12.5px;
+                border-bottom: 2px solid transparent;
             }
         }
 
@@ -404,11 +414,11 @@
             }
 
             .hampton-amenity-item {
-                padding: 6px 8px;
+                padding: 8px 10px;
             }
 
             .hampton-amenity-item span {
-                font-size: 10px;
+                font-size: 12px;
             }
         }
     
