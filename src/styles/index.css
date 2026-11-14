@@ -1449,6 +1449,16 @@ body {
   background: #eff6ff;
 }
 
+.hotel-title-mobile,
+.hotel-subtitle-mobile {
+  display: none !important;
+}
+
+.hotel-title-desktop,
+.hotel-subtitle-desktop {
+  display: inline;
+}
+
 /* Equal 8-column distribution across desktop width to eliminate right-side blank space */
 .sticky-nav .nav-item {
   flex: 1 1 0;
@@ -1462,6 +1472,20 @@ body {
   color: #374151;
   border-radius: 0;
   margin: 0;
+  gap: 7px;
+}
+
+.sticky-nav .nav-icon {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  flex-shrink: 0;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+}
+
+.sticky-nav .nav-item:hover .nav-icon {
+  transform: scale(1.1);
 }
 
 .sticky-nav .nav-item:hover {
@@ -1497,7 +1521,7 @@ body {
 #reviews,
 #contact,
 #terms {
-  scroll-margin-top: calc(var(--header-height) + var(--sticky-gap) + 80px);
+  scroll-margin-top: 130px;
 }
 
 
@@ -5744,16 +5768,38 @@ body.disable-animations * {
   }
 
   .hotel-title {
-    font-size: 12px !important;
     margin: 0 0 2px 0 !important;
     white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
+    line-height: 1.2 !important;
+  }
+
+  .hotel-title-desktop,
+  .hotel-subtitle-desktop {
+    display: none !important;
+  }
+
+  .hotel-title-mobile {
+    display: inline-block !important;
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.4px !important;
+    color: #111827 !important;
+    white-space: nowrap !important;
+    line-height: 1.2 !important;
   }
 
   .hotel-subtitle {
-    font-size: 10px !important;
     margin: 0 !important;
+  }
+
+  .hotel-subtitle-mobile {
+    display: block !important;
+    font-size: 11px !important;
+    color: #6b7280 !important;
+    white-space: nowrap !important;
+    margin-top: 1px !important;
+    font-style: normal !important;
+    line-height: 1.2 !important;
   }
 
   .hotel-details-btn {
@@ -5774,7 +5820,7 @@ body.disable-animations * {
     gap: 8px !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 10px auto 0 !important;
+    margin: 14px auto 0 !important;
     padding: 0 10px !important;
     box-sizing: border-box !important;
   }
@@ -5842,7 +5888,7 @@ body.disable-animations * {
   }
 
   body {
-    padding-top: 66px !important;
+    padding-top: 78px !important;
   }
 }
 
@@ -5872,8 +5918,8 @@ body.disable-animations * {
     font-size: 13px !important;
   }
 
-  .hotel-title {
-    font-size: 11.5px !important;
+  .hotel-title-mobile {
+    font-size: 13px !important;
   }
 
   .hotel-logo img {
@@ -5911,8 +5957,8 @@ body.disable-animations * {
     font-size: 12.5px !important;
   }
 
-  .hotel-title {
-    font-size: 11px !important;
+  .hotel-title-mobile {
+    font-size: 12px !important;
     text-align: left !important;
   }
 
@@ -5941,21 +5987,30 @@ body.disable-animations * {
   /* Sticky nav smooth touch scrolling without negative margins */
   .sticky-nav {
     position: sticky !important;
-    top: 58px !important;
+    top: 56px !important;
     margin: 10px 0 0 !important;
     z-index: 99 !important;
   }
 
   .sticky-nav-container {
-    padding: 4px 6px !important;
-    gap: 4px !important;
+    padding: 6px 8px !important;
+    gap: 6px !important;
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
   }
 
   .sticky-nav .nav-item {
-    padding: 6px 12px !important;
-    font-size: 12px !important;
+    padding: 7px 12px !important;
+    font-size: 12.5px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    border-radius: 6px !important;
+  }
+
+  .sticky-nav .nav-icon {
+    width: 14px !important;
+    height: 14px !important;
   }
 
   /* Photo Grid mobile view */
@@ -6592,4 +6647,50 @@ body {
   .terms-section { padding: 22px 14px !important; margin-top: 28px !important; }
   .hotel-preview-wrapper { width: 100% !important; padding: 10px 10px 24px !important; }
   .hotel-footer { margin-top: 32px !important; }
+
+  /* Room Cards: full width Book Now button on mobile */
+  .room-pricing {
+    width: 100% !important;
+    padding: 10px 14px 14px !important;
+    display: flex !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    border-left: none !important;
+    border-top: 1px solid #e5e7eb !important;
+    background: #f9fafb !important;
+  }
+
+  .book-room-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px 20px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .modal-book-btn {
+    width: 100% !important;
+    padding: 12px 20px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* All sections land cleanly below the fixed header + sticky nav */
+  #overview,
+  #guest-rooms,
+  #amenities,
+  #location,
+  #info,
+  #reviews,
+  #contact,
+  #terms {
+    scroll-margin-top: 120px !important;
+  }
 }

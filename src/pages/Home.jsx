@@ -74,7 +74,19 @@ export default function Home() {
     isManualScrolling.current = true;
     if (sections.includes(id)) setActiveNav(id);
 
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const header = document.querySelector('.hotel-header');
+    const stickyNav = document.querySelector('.sticky-nav');
+    const headerHeight = header ? header.getBoundingClientRect().height : 60;
+    const navHeight = stickyNav ? stickyNav.getBoundingClientRect().height : 46;
+    const totalOffset = headerHeight + navHeight + 16;
+
+    const elementPosition = el.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - totalOffset;
+
+    window.scrollTo({
+      top: Math.max(0, offsetPosition),
+      behavior: 'smooth'
+    });
 
     clearTimeout(manualTimer.current);
     manualTimer.current = setTimeout(() => {
