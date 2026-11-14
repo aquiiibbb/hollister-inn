@@ -17,7 +17,7 @@ export default function Header({ hotelDetailsOpen, showHotelDetails, closeHotelD
               </h1>
               <p className="hotel-subtitle">
                 <span className="hotel-subtitle-desktop">152 San Felipe Road, Hollister, CA-95023</span>
-                <span className="hotel-subtitle-mobile">Hollister, CA 95023</span>
+                <span className="hotel-subtitle-mobile">152 San Felipe Rd, Hollister, CA 95023</span>
               </p>
             </div>
             <button className="hotel-details-btn" onClick={() => showHotelDetails()}>Hotel Details</button>

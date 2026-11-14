@@ -41,7 +41,17 @@ export default function Footer() {
             <button className="faq-button" id="faqToggle" ref={faqButtonRef} onClick={() => setFaqOpen((open) => !open)}>FAQ</button>
             <div id="faqPopup" className={'faq-popup' + (faqOpen ? ' active' : '')} ref={faqPopupRef}>
               <div className="faq-content">
-                <h2>Frequently Asked Questions</h2>
+                <div className="faq-header">
+                  <h2>Frequently Asked Questions</h2>
+                  <button
+                    type="button"
+                    className="faq-close-btn"
+                    onClick={() => setFaqOpen(false)}
+                    aria-label="Close FAQ"
+                  >
+                    ×
+                  </button>
+                </div>
                 <h3>Does Hollister Inn have a pool?</h3>
                 <p>Yes, this hotel has an outdoor swimming pool (infinity pool, open all year, all ages welcome).</p>
                 <h3>How far is Hollister Inn from the centre of Hollister?</h3>

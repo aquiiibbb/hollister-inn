@@ -378,13 +378,38 @@ body {
   color: #1a1a2e;
 }
 
-.faq-content h2 {
-  margin: 0 0 20px 0;
-  font-size: 20px;
-  font-weight: 600;
-  color: #3a0f1b;
+.faq-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-bottom: 2px solid #3a0f1b;
   padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.faq-header h2 {
+  margin: 0 !important;
+  padding: 0 !important;
+  border-bottom: none !important;
+  font-size: 19px !important;
+  color: #3a0f1b;
+  font-weight: 600;
+}
+
+.faq-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0 4px;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+}
+
+.faq-close-btn:hover {
+  color: #111827;
 }
 
 .faq-content h3 {
@@ -1449,14 +1474,16 @@ body {
   background: #eff6ff;
 }
 
-.hotel-title-mobile,
-.hotel-subtitle-mobile {
-  display: none !important;
-}
+@media (min-width: 769px) {
+  .hotel-title-mobile,
+  .hotel-subtitle-mobile {
+    display: none !important;
+  }
 
-.hotel-title-desktop,
-.hotel-subtitle-desktop {
-  display: inline;
+  .hotel-title-desktop,
+  .hotel-subtitle-desktop {
+    display: inline !important;
+  }
 }
 
 /* Equal 8-column distribution across desktop width to eliminate right-side blank space */
@@ -6078,12 +6105,26 @@ body.disable-animations * {
     box-shadow: 0 4px 14px rgba(0,0,0,0.2) !important;
   }
 
-  /* FAQ Popup preventing horizontal overflow */
+  /* FAQ Popup preventing horizontal overflow - centered on mobile screen */
   .faq-popup {
+    position: fixed !important;
+    bottom: 75px !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%, 15px) !important;
     width: calc(100vw - 32px) !important;
-    max-width: 350px !important;
-    right: 0 !important;
-    left: auto !important;
+    max-width: 380px !important;
+    max-height: 75vh !important;
+    border-radius: 14px !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35) !important;
+    z-index: 99999 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .faq-popup.active {
+    transform: translate(-50%, 0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   /* Modal overlay padding and close button */
@@ -6639,6 +6680,94 @@ body {
 
 /* Bottom Overrides for Mobile (Screen width <= 768px) */
 @media (max-width: 768px) {
+  /* Mobile Header - Attractive, single line title without lengthy "- Hollister California" */
+  .hotel-header {
+    padding: 6px 0 !important;
+    background: #ffffff !important;
+  }
+
+  .hotel-header-container {
+    padding: 0 10px !important;
+  }
+
+  .hotel-top-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    padding: 2px 0 !important;
+  }
+
+  .hotel-logo-section {
+    flex-shrink: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .hotel-logo img {
+    height: 36px !important;
+    width: auto !important;
+    border-radius: 4px !important;
+  }
+
+  .hotel-main-info {
+    flex: 1 !important;
+    text-align: left !important;
+    padding: 0 4px !important;
+    min-width: 0 !important;
+  }
+
+  .hotel-title {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important;
+  }
+
+  .hotel-title-desktop,
+  .hotel-subtitle-desktop {
+    display: none !important;
+  }
+
+  .hotel-title-mobile {
+    display: block !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px !important;
+    color: #111827 !important;
+    white-space: nowrap !important;
+    line-height: 1.2 !important;
+  }
+
+  .hotel-subtitle {
+    margin: 0 !important;
+  }
+
+  .hotel-subtitle-mobile {
+    display: block !important;
+    font-size: 11px !important;
+    color: #64748b !important;
+    white-space: nowrap !important;
+    margin-top: 1px !important;
+    font-style: normal !important;
+    line-height: 1.2 !important;
+    font-weight: 500 !important;
+  }
+
+  .hotel-details-btn {
+    flex-shrink: 0 !important;
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    height: 30px !important;
+    border-radius: 6px !important;
+    background: #661f31 !important;
+    color: #ffffff !important;
+    border: none !important;
+    margin-top: 0 !important;
+    white-space: nowrap !important;
+    box-shadow: 0 2px 4px rgba(102, 31, 49, 0.25) !important;
+  }
+
   .nearby-left, .nearby-right { padding: 20px 16px !important; }
   .info-item { padding: 16px !important; }
   .review-card { padding: 20px 16px !important; min-height: auto !important; }
@@ -6692,5 +6821,27 @@ body {
   #contact,
   #terms {
     scroll-margin-top: 120px !important;
+  }
+
+  /* FAQ Popup centered on mobile screen */
+  .faq-popup {
+    position: fixed !important;
+    bottom: 75px !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%, 15px) !important;
+    width: calc(100vw - 32px) !important;
+    max-width: 380px !important;
+    max-height: 75vh !important;
+    border-radius: 14px !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35) !important;
+    z-index: 99999 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .faq-popup.active {
+    transform: translate(-50%, 0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }
